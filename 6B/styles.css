@@ -1,0 +1,76 @@
+/* Tyylit */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* määritetään headerin tyylit */
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* määritetään vaakasuoran navigaatiopalkin tyyli, asettelu ja värit */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+/* tässä käytetty pseudo elementtiä hover-efektin luomiseen */
+nav ul li a:hover {
+    color: red;
+    text-decoration: underline;
+}
+/* container luo pystysuoran navigaation */
+.container {
+    display: flex;
+}
+
+/* määritetään pystysuoran navigaation tyyli, asettelu ja värit */
+.vertical-nav {
+    background-color: lightgray;
+    width: 200px;
+    padding: 10px;
+}
+
+.vertical-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vertical-nav ul li {
+    display: block;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.vertical-nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+/* section määrittää pääsisällön tyylit */
+section {
+    padding: 10px;
+    width: calc(100% - 220px);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+/* määäritetään foooterin tyylit */
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
