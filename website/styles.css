@@ -1,0 +1,344 @@
+:root {
+    /* Väriteemat ja muut muuttujat */
+    --primary: #2d3a4a;
+    --secondary: #f4f6fa;
+    --accent: #3d3b3a;
+    --text: #222;
+    --muted: #7a869a;
+    --border-radius: 8px;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.274);
+}
+
+/* Sivun perusasetukset */
+body {
+    margin: 0;
+    font-family: 'The Seasons', 'Segoe UI', Arial, sans-serif;
+    background: var(--secondary);
+    color: var(--text);
+    line-height: 1.6;
+    min-width: 0;
+}
+
+/* Ylätunnisteen (header) tyyli */
+header {
+    /* Taustakuva ja asettelu */
+    background: url('img/header.png') center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 3.5rem;
+    box-sizing: border-box;
+}
+
+/* Navigaatiopalkki headerin sisällä */
+.navbar {
+    /* Navigaation asettelu ja ulkoasu */
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding: 0.75rem 0;
+    margin-bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(244,246,250,0.95);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+/* Navigaatiolinkit */
+.navbar a {
+    /* Linkkien ulkoasu navigaatiossa */
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    font-size: 1rem;
+}
+.navbar a:hover {
+    /* Hover-efekti navigaatiolinkeille */
+    background: var(--accent);
+    color: #fff;
+}
+        @media (max-width: 700px) {
+            .esittely > div {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            .esittely img {
+                margin-bottom: 16px !important;
+                margin-right: 0 !important;
+            }
+            .esittely div[style*="max-width"] {
+                text-align: center !important;
+                margin: 0 0 24px 0 !important;
+            }
+        }
+
+/* Alatunnisteen (footer) tyyli */
+footer {
+    /* Footerin ulkoasu ja asettelu */
+    color: #3d3b3a;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    margin-top: 2rem;
+    box-sizing: border-box;
+}
+footer a {
+    /* Footerin linkkien tyyli */
+    color: var(--accent);
+    text-decoration: underline;
+    transition: background 0.2s, color 0.2s;
+    padding: 0.1em 0.3em;
+    border-radius: 4px;
+}
+footer a:hover {
+    /* Hover-efekti footerin linkeille */
+    background: var(--accent);
+    color: #fff;
+}
+
+/* Pääsisällön (main) tyyli */
+main {
+    /* Sisältöalueen asettelu ja ulkoasu */
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 95%;
+}
+
+/* Otsikot */
+h1, h2, h3 {
+    /* Otsikoiden väri ja ulkoasu */
+    color: var(--accent);
+    margin-top: 0;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    word-break: break-word;
+}
+
+/* Yleiset linkit */
+a {
+    /* Linkkien perusväri ja siirtymä */
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+a:hover {
+    /* Hover-efekti yleisille linkeille */
+    color: var(--primary);
+}
+
+/* Painikkeet */
+button, .btn {
+    /* Painikkeiden ulkoasu */
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: background 0.2s;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+button:hover, .btn:hover {
+    /* Hover-efekti painikkeille */
+    background: var(--primary);
+}
+
+/* Slideshow-tyylit */
+/* Jokainen .slide on oletuksena piilossa, vie koko käytettävissä olevan leveyden */
+.slide { 
+    width: 100%; 
+    display: none; 
+}
+
+/* Slideshow-containerin asettelu ja maksimileveys */
+.slideshow { 
+    position: relative; 
+    max-width: 400px; 
+    margin: auto; 
+    padding: 0 64px; /* Lisää tilaa nuolinapeille reunoille */
+}
+
+/* Kaikki slideshow-kuvat samankokoisiksi */
+.slideshow img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--border-radius);
+}
+
+/* Slideshow-nappien tyyli ja sijoittelu */
+.slideshow button { 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #fff 80%, #e6e9ef 100%);
+    border: none; 
+    font-size: 2rem; 
+    cursor: pointer; 
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(45,58,74,0.18), 0 1.5px 4px rgba(61,59,58,0.08);
+    border-radius: 50%;
+    transition: box-shadow 0.2s, background 0.2s, color 0.2s, transform 0.15s;
+    color: var(--primary);
+    outline: none;
+}
+
+/* Responsiivisuus: alle 480px leveys */
+@media (max-width: 480px) {
+    .slideshow {
+        max-width: 98vw;
+        padding: 0 8px;
+    }
+    .slideshow img {
+        width: 100vw;
+        max-width: 100%;
+        height: 48vw;
+        max-height: 320px;
+        min-height: 160px;
+    }
+    .slideshow button {
+        width: 36px;
+        height: 36px;
+        font-size: 1.3rem;
+    }
+    .slideshow button:first-of-type { left: -8px !important; }
+    .slideshow button:last-of-type { right: -8px !important; }
+}
+
+/* Hover- ja focus-efekti slideshow-napeille */
+.slideshow button:hover, .slideshow button:focus {
+    background: linear-gradient(135deg, #f4f6fa 70%, #dbe2ec 100%);
+    color: var(--accent);
+    box-shadow: 0 6px 24px rgba(45,58,74,0.22), 0 2px 8px rgba(61,59,58,0.12);
+    transform: translateY(-50%) scale(1.08);
+}
+
+/* Edellinen-nappi vasemmalle, seuraava-nappi oikealle */
+.slideshow button:first-of-type { left: -64px; }
+.slideshow button:last-of-type { right: -64px; }
+
+
+/* Responsiivisuus: alle 900px leveys */
+@media (max-width: 900px) {
+    main {
+        /* Pääsisällön leveys ja padding pienemmillä näytöillä */
+        max-width: 98vw;
+        padding: 1.5rem;
+    }
+    header {
+        /* Headerin korkeus pienemmillä näytöillä */
+        min-height: 300px;
+    }
+    .navbar {
+        /* Navigaation gap pienemmillä näytöillä */
+        gap: 2rem;
+    }
+}
+
+/* Responsiivisuus: alle 700px leveys */
+@media (max-width: 700px) {
+    main {
+        /* Sisällön padding ja marginaali */
+        padding: 1rem;
+        margin: 1rem;
+    }
+    h1 {
+        /* Otsikoiden fonttikoko */
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    .navbar {
+        /* Navigaation gap ja fonttikoko */
+        gap: 1rem;
+        flex-wrap: wrap;
+        font-size: 0.95rem;
+    }
+    header {
+        /* Headerin korkeus ja padding */
+        min-height: 200px;
+        padding-bottom: 2.5rem;
+    }
+}
+
+/* Responsiivisuus: alle 480px leveys */
+@media (max-width: 480px) {
+    header, footer {
+        /* Headerin ja footerin padding */
+        padding: 1rem 0;
+    }
+    header {
+        /* Headerin korkeus ja taustakuva */
+        min-height: 280px;
+        background-position: top center;
+        background-size: contain;
+        padding-bottom: 2rem;
+    }
+    main {
+        /* Sisällön padding ja marginaali */
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+    .navbar {
+        /* Navigaation asettelu mobiilissa */
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+        font-size: 0.95rem;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    button, .btn {
+        /* Painikkeet koko leveydelle mobiilissa */
+        width: 100%;
+        padding: 0.75em 0;
+        font-size: 1em;
+    }
+}
